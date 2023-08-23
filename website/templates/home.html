@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block title %}
+Home page
+{% endblock %}
+
+{% block body %}
+<p>Home file is working</p>
+{% for note in notes %}
+<section class="anecdote">
+    <h2> {{ note.title }}</h2>
+    <p> {{ note.data }} </p>
+    <section class="anecdote-likes">
+        <span>Likes: {{ note.likes }}</span>
+        <span>Dislikes: {{ note.dislikes }}</span>
+    </section>
+    <section class="anecdote-info">
+        <span>Author: </span>
+    </section>
+</section>
+{% endfor %}
+{% endblock %}

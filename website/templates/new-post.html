@@ -1,0 +1,11 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<h2>Write a new post</h2>
+<form action="/new-post" method="post">
+    <textarea name="new-post" id="new-post" cols="30" rows="10" placeholder="Write your new post here">
+
+    </textarea>
+    <button type="submit">Submit your post</button>
+</form>
+{% endblock %}
