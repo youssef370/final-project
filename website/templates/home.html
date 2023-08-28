@@ -5,17 +5,16 @@ Home page
 {% endblock %}
 
 {% block body %}
-<p>Home file is working</p>
 {% for post in posts %}
 <section class="anecdote">
     <h2> {{ post.title }}</h2>
-    <p> {{ post.data }} </p>
+    <p> {{ post.text }} </p>
     <section class="anecdote-likes">
         <span>Likes: {{ post.likes }}</span>
         <span>Dislikes: {{ post.dislikes }}</span>
     </section>
     <section class="anecdote-info">
-        <span>Author: </span>
+        <span>Author: {{ author }} </span>
     </section>
 </section>
 {% endfor %}
