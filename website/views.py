@@ -8,8 +8,9 @@ views = Blueprint('views', __name__)
 
 @views.route('/')
 def home():
-    db_posts = Post.query.all()
+    db_posts = db.session.execute(db.select(Post)).scalars()
     posts = [post for post in db_posts]
+    print(posts[0])
     return render_template('home.html', user=current_user, posts=posts)
 
 @views.route('/new-post', methods=['GET', 'POST'])
@@ -18,11 +19,8 @@ def new_post():
     if request.method == 'POST':
         post_text = request.form.get('post-text')
         post_title = request.form.get('post-title')
-
-        print(User.query.filter_by())
         
-        new_post = Post(title=post_title, text=post_text, likes=0 , dislikes=0)
-        
+        new_post = Post(title=post_title, text=post_text, likes=0 , dislikes=0, user_id=current_user.id)
         db.session.add(new_post)
         db.session.commit()
 
@@ -32,6 +30,6 @@ def new_post():
 
 @views.route('/top-posts')
 def top_posts():
-    db_posts = Post.query.all()
+    db_posts = db.session.execute(db.select(Post).order_by(Post.likes)).scalars()
     posts = [post for post in db_posts]
     return render_template('home.html', user=current_user, posts=posts)

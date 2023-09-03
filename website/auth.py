@@ -12,7 +12,9 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
 
-        user = User.query.filter_by(username=username).first()
+        # CHANGE HERE
+        user = db.session.execute(db.select(User).filter_by(username=username).limit(1)).scalar()
+
         if user:
             if check_password_hash(user.password, password):
                 flash('Logged in successfully', category='success')
@@ -40,7 +42,7 @@ def sign_up():
         password = request.form.get('password')
         password_confirm = request.form.get('password-confirm')
 
-        # Query relevant info from the database
+        # Query relevant info from the database || CHANGE HERE
         user_email = User.query.filter_by(email=email).first()
         user_name = User.query.filter_by(username=username).first()
 
@@ -56,7 +58,7 @@ def sign_up():
         # Add email validation
         else:
 
-            # Create new user and add him to db
+            # Create new user and add him to db || CHANGE HERE
             new_user = User(email=email, username=username, password=generate_password_hash(password, method='sha256'))
             db.session.add(new_user)
             db.session.commit()
