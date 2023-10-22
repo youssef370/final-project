@@ -5,13 +5,11 @@ Log In
 {% endblock %}
 
 {% block body %}
-<form action="/login" method="post">
-    <label>
+<section class="login-form">
+    <form action="/login" method="post">
         <input type="text" name="username" placeholder="Your Username">
-    </label>
-    <label>
         <input type="password" name="password" placeholder="Password">
-    </label>
-    <button type="submit">Log In</button>
-</form>
+        <button type="submit">Log In</button>
+    </form>
+</section>
 {% endblock %}

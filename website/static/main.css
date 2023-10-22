@@ -1,0 +1,96 @@
+html {
+    font-size: 62.5%;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+header {
+    width: 100%;
+    background-color: lightblue;
+}
+
+header * {
+    font-size: 3rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    color: white;
+}
+
+#header-nav {
+    width: 60%;
+    margin: auto;
+}
+
+#header-nav ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.anecdote {
+    width: 50%;
+    margin: auto;
+}
+
+section  {
+    font-size: 2rem;
+    margin-top: 5rem;
+}    
+
+section h2 {
+    font-size: 6rem;
+}
+
+section > * {
+    margin: 2rem 0 2rem 0;
+}
+
+section > form {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    flex-direction: column;
+    width: 100%;
+}
+
+form input {
+    padding: 1rem 3rem;
+}
+
+.alert-box {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.alert-box button {
+    margin: 2rem;
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(0, 0, 0, 0)
+}
+
+.alert-box button:hover {
+    color: white;
+}
+
+.success {
+    background-color: rgb(171, 243, 171);
+}
+
+.error {
+    background-color: rgb(236, 153, 153);
+}
+
+.like-button {
+    padding: .25rem 1.5rem;
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+}
+
+.like-button-liked {
+    background-color: rgb(0, 131, 218);
+}

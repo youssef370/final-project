@@ -12,9 +12,7 @@ def login():
         username = request.form.get('username')
         password = request.form.get('password')
 
-        # CHANGE HERE
         user = db.session.execute(db.select(User).filter_by(username=username).limit(1)).scalar()
-
         if user:
             if check_password_hash(user.password, password):
                 flash('Logged in successfully', category='success')
@@ -57,7 +55,6 @@ def sign_up():
             flash('Passwords don\'t match', category='error')
         # Add email validation
         else:
-
             # Create new user and add him to db || CHANGE HERE
             new_user = User(email=email, username=username, password=generate_password_hash(password, method='sha256'))
             db.session.add(new_user)

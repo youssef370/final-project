@@ -9,13 +9,21 @@ Home page
 <section class="anecdote">
     <h2> {{ post.title }}</h2>
     <p> {{ post.text }} </p>
-    <section class="anecdote-likes">
-        <span>Likes: {{ post.likes }}</span>
-        <span>Dislikes: {{ post.dislikes }}</span>
-    </section>
     <section class="anecdote-info">
-        <span>Author: {{ post.author.username }} </span>
+        <span>Author: {{ post.author.username }}</span>
     </section>
+    <section class="anecdote-likes">
+        <button type="button" class="like-button" id="like-button-{{ post.id }}">Like</button>
+        <span class="like-counter" id="like-counter-{{ post.id }}">({{ post.likes }})</span>
+    </section>
+    {% if my_page %}
+    <section class="control-buttons">
+        <form action="/delete-post" method="post">
+            <input type="hidden" name="id" value = "{{ post.id }}">
+            <button type="submit">Delete</button>
+        </form>
+    </section>
+    {% endif %}
 </section>
 {% endfor %}
 {% endblock %}

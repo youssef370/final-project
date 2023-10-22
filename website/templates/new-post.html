@@ -2,11 +2,13 @@
 
 {% block body %}
 
-<h2>Write a new post</h2>
-<form action="/new-post" method="post">
-    <input type="text" name="post-title" id="post-title" placeholder="Title">
-    <textarea name="post-text" id="post-text" cols="30" rows="10" placeholder="Write your new post here"></textarea>
-    <button type="submit">Submit your post</button>
-</form>
+<section class="" id="new-post">
+    <form action="/new-post" method="post">
+        <h2>Write a new post</h2>
+        <input type="text" name="post-title" id="post-title" placeholder="Title">
+        <textarea name="post-text" id="post-text" cols="30" rows="10" placeholder="Write your new post here"></textarea>
+        <button type="submit" id="post-submit">Submit your post</button>
+    </form>
+</section>
 
 {% endblock %}
