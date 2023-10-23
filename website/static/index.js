@@ -14,6 +14,6 @@ likeButtons.forEach(likeButton => {
             } else {
                 likeButton.classList.remove('like-button-liked')
             }
-        })
+        }).catch((e) => alert('Could not like post'))
     })
 })

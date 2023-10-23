@@ -14,9 +14,6 @@ class User(db.Model, UserMixin):
 
     posts = relationship("Post", back_populates='author')
 
-    def __repr__(self) -> str:
-        return f'Username: {self.username} | ID: {self.id}'
-
 class Post(db.Model):
     __tablename__ = 'posts'
 

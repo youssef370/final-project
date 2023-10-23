@@ -40,7 +40,7 @@ def sign_up():
         password = request.form.get('password')
         password_confirm = request.form.get('password-confirm')
 
-        # Query relevant info from the database || CHANGE HERE
+        # Query relevant info from the database
         user_email = User.query.filter_by(email=email).first()
         user_name = User.query.filter_by(username=username).first()
 
@@ -55,7 +55,7 @@ def sign_up():
             flash('Passwords don\'t match', category='error')
         # Add email validation
         else:
-            # Create new user and add him to db || CHANGE HERE
+            # Create new user and add him to db
             new_user = User(email=email, username=username, password=generate_password_hash(password, method='sha256'))
             db.session.add(new_user)
             db.session.commit()

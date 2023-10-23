@@ -29,7 +29,7 @@ def new_post():
 
 @views.route('/top-posts')
 def top_posts():
-    db_posts = db.session.execute(db.select(Post).order_by(Post.likes)).scalars()
+    db_posts = db.session.execute(db.select(Post).order_by(Post.likes).desc).scalars()
     posts = [post for post in db_posts]
     return render_template('home.html', user=current_user, posts=posts)
 
