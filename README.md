@@ -1,6 +1,6 @@
 # YOUR PROJECT TITLE
 Post submission system
-#### Video Demo:  <URL HERE>
+#### Video Demo:  https://www.youtube.com/watch?v=NT3gdQnYyeA
 #### Description:
 You can create an account and submit a post that can be seen and liked by other users.
 
